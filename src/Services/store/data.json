@@ -1,0 +1,559 @@
+{
+    "_id": {
+      "$oid": "63003ef6aa257166765177df"
+    },
+    "storeUniqName": "Xyz",
+    "website": {
+      "name": {
+        "en": "xyx",
+        "ar": "testest"
+      },
+      "theme": {
+        "headerColor": "qwe",
+        "themeColor": "#ff40ff"
+      },
+      "languages": [
+        {
+          "name": "Arabic",
+          "code": "ar"
+        },
+        {}
+      ],
+      "content": {
+        "wellcoming": "",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, ",
+        "phone": "",
+        "address": "",
+        "fax": "",
+        "email": ""
+      },
+      "currencies": [
+        {
+          "name": "SDG",
+          "currency": "SDG",
+          "price": 0.4
+        },
+        {
+          "name": "Dollar",
+          "currency": "USD",
+          "price": 1
+        }
+      ]
+    },
+    "catrgorys": [
+      {
+        "name": "dsfg",
+        "items": []
+      }
+    ],
+     "menuItems": [
+      {
+        "title":{"en": "home new","ar":"ssss"},
+        "type": "sub",
+        "active": false,
+        "children": [
+          {
+            "title":{"en": "clothing","ar":"الريسية"},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/home/fashion",
+                "title":{"en": "fashion-01","ar":"اناقة"},
+                "type": "link"
+              },
+              {
+                "path": "/home/fashion-2",
+                "title":{"en": "fashion-02","ar":"شسينتا"},
+                "type": "link"
+              },
+              {
+                "path": "/home/fashion-3",
+                "title":{"en": "fashion-03","ar":"شسيشسي"},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "path": "/home/vegetable",
+            "title":{"en": "vegetable","ar":"خضار"},
+            "type": "link"
+          },
+          {
+            "path": "/home/watch",
+            "title":{"en": "watch","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/furniture",
+            "title":{"en": "furniture","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/flower",
+            "title":{"en": "flower","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/beauty",
+            "title":{"en": "beauty","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/electronics",
+            "title":{"en": "electronics","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/pets",
+            "title":{"en": "pets","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/gym",
+            "title":{"en": "gym","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/tools",
+            "title":{"en": "tools","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/shoes",
+            "title":{"en": "shoes","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/bags",
+            "title":{"en": "bags","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/home/marijuana",
+            "title":{"en": "marijuana","ar":""},
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "title":{"en": "Shop","ar":""},
+        "type": "sub",
+        "active": false,
+        "children": [
+          {
+            "path": "/shop/collection/left/sidebar",
+            "title":{"en": "left-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/collection/right/sidebar",
+            "title":{"en": "right-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/collection/no/sidebar",
+            "title":{"en": "no-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/collection/infinitescroll",
+            "title":{"en": "Infinite Scroll","ar":""},
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "title":{"en": "Products","ar":""},
+        "type": "sub",
+        "active": false,
+        "children": [
+          {
+            "title":{"en": "sidebar","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/shop/product/left/sidebar/trim-dress",
+                "title":{"en": "left-sidebar","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/shop/product/right/sidebar/trim-dress",
+                "title":{"en": "right-sidebar","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/shop/product/no/sidebar/trim-dress",
+                "title":{"en": "no-sidebar","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "path": "/shop/product/three/column/trim-dress",
+            "title":{"en": "three-column","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/product/four/image/belted-dress",
+            "title":{"en": "four-image","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/product/bundle/trim-dress",
+            "title":{"en": "bundle-product","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/shop/product/image/outside/trim-dress",
+            "title":{"en": "image-outside","ar":""},
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "title":{"en": "Features","ar":""},
+        "type": "sub",
+        "megaMenu": true,
+        "badge": true,
+        "badgeText": "new",
+        "active": false,
+        "children": [
+          {
+            "title":{"en": "portfolio","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/pages/portfolio/grid/two",
+                "title":{"en": "portfolio-grid-2","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/grid/three",
+                "title":{"en": "portfolio-grid-3","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/grid/four",
+                "title":{"en": "portfolio-grid-4","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/masonry/grid/two",
+                "title":{"en": "masonry-grid-2","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/masonry/grid/three",
+                "title":{"en": "masonry-grid-3","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/masonry/grid/four",
+                "title":{"en": "masonry-grid-4","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/portfolio/masonry/full-width",
+                "title":{"en": "masonry-Full-Width","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "title":{"en": "add-to-cart","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/home/vegetable",
+                "title":{"en": "cart-right","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/home/watch",
+                "title":{"en": "cart-left","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/home/furniture",
+                "title":{"en": "cart-top","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/home/flower",
+                "title":{"en": "cart-bottom","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/home/fashion",
+                "title":{"en": "cart-model-popup","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "title":{"en": "theme-elements","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/elements/theme/title",
+                "title":{"en": "title","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/theme/collection-banner",
+                "title":{"en": "collection-banner","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/theme/home-slider",
+                "title":{"en": "home-slider","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/theme/category",
+                "title":{"en": "category","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/theme/services",
+                "title":{"en": "services","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "title":{"en": "product-elements","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/elements/product/slider",
+                "title":{"en": "product-slider","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/product/banners",
+                "title":{"en": "banners","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/product/tabs",
+                "title":{"en": "product-tabs","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/elements/product/multi-slider",
+                "title":{"en": "multi-slider","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "title":{"en": "email-template","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "http://themes.pixelstrap.com/multikart/front-end/email-order-success.html",
+                "title":{"en": "order-success","ar":""},
+                "type": "extTabLink"
+              },
+              {
+                "path": "http://themes.pixelstrap.com/multikart/front-end/email-order-success-two.html",
+                "title":{"en": "order-success-2","ar":""},
+                "type": "extTabLink"
+              },
+              {
+                "path": "http://themes.pixelstrap.com/multikart/front-end/email-template.html",
+                "title":{"en": "email-template","ar":""},
+                "type": "extTabLink"
+              },
+              {
+                "path": "http://themes.pixelstrap.com/multikart/front-end/email-template-two.html",
+                "title":{"en": "email-template-2","ar":""},
+                "type": "extTabLink"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title":{"en": "pages","ar":""},
+        "type": "sub",
+        "active": false,
+        "children": [
+          {
+            "title":{"en": "account","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/pages/wishlist",
+                "title":{"en": "wishlist","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/cart",
+                "title":{"en": "cart","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/dashboard",
+                "title":{"en": "dashboard","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/login",
+                "title":{"en": "login","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/register",
+                "title":{"en": "register","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/contact",
+                "title":{"en": "contact","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/forget/password",
+                "title":{"en": "forget-password","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/profile",
+                "title":{"en": "profile","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/checkout",
+                "title":{"en": "checkout","ar":""},
+                "type": "link"
+              }
+            ]
+          },
+          {
+            "path": "/pages/aboutus",
+            "title":{"en": "about-us","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/search",
+            "title":{"en": "search","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/typography",
+            "title":{"en": "typography","ar":""},
+            "type": "link",
+            "badge": true,
+            "badgeText": "new"
+          },
+          {
+            "path": "/pages/review",
+            "title":{"en": "review","ar":""},
+            "type": "link",
+            "badge": true,
+            "badgeText": "new"
+          },
+          {
+            "path": "/pages/order/success",
+            "title":{"en": "order-success","ar":""},
+            "type": "link"
+          },
+          {
+            "title":{"en": "compare","ar":""},
+            "type": "sub",
+            "active": false,
+            "children": [
+              {
+                "path": "/pages/compare/one",
+                "title":{"en": "compare-1","ar":""},
+                "type": "link"
+              },
+              {
+                "path": "/pages/compare/two",
+                "title":{"en": "compare-2","ar":""},
+                "type": "link",
+                "badge": true,
+                "badgeText": "new"
+              }
+            ]
+          },
+          {
+            "path": "/pages/collection",
+            "title":{"en": "collection","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/lookbook",
+            "title":{"en": "lookbook","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/404",
+            "title":{"en": "404","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/comingsoon",
+            "title":{"en": "coming-soon","ar":""},
+            "type": "link",
+            "badge": true,
+            "badgeText": "new"
+          },
+          {
+            "path": "/pages/faq",
+            "title":{"en": "faq","ar":""},
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "title":{"en": "blogs","ar":""},
+        "type": "sub",
+        "active": false,
+        "children": [
+          {
+            "path": "/pages/blog/left/sidebar",
+            "title":{"en": "left-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/blog/right/sidebar",
+            "title":{"en": "right-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/blog/no/sidebar",
+            "title":{"en": "no-sidebar","ar":""},
+            "type": "link"
+          },
+          {
+            "path": "/pages/blog/details",
+            "title":{"en": "blog-details","ar":""},
+            "type": "link"
+          }
+        ]
+      }
+    ],
+    "carts": [
+      {
+        "user": 123456,
+        "items": [
+          {
+            "itemId": 234567,
+            "qty": 5
+          }
+        ],
+        "lastUpdate": "wrerty"
+      }
+    ]
+  }
