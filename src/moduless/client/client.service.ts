@@ -2,7 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { ClientSession, Schema as MongooseSchema } from 'mongoose';
 import { GetQueryDto } from '../../dto/getQueryDto';
 import { ClientRepository } from '../../repositories/client.repository';
-import { UserService } from '../user/user.service';
+import { UserService } from '../../modules/user/user.service';
 import { CreateClientDto } from './dto/createClient.dto';
 
 @Injectable()

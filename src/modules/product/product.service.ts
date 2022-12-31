@@ -1,27 +1,36 @@
-// import { Injectable } from '@nestjs/common';
-// import { ClientSession, Schema as MongooseSchema } from 'mongoose';
-// import { GetQueryDto } from 'src/dto/getQueryDto';
-// import { ProductRepository } from '../../repositories/product.repository';
-// import { CreateProductDto } from './dto/createProduct.dto';
-// import { UpdateProductDto } from './dto/updateProduct.dto';
+import { Injectable } from '@nestjs/common';
+import { IDataServices } from '../../core/IDataServices';
+import { CreateProductDto } from './dto/create-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
+import { Product } from './entities/product.entity';
 
-// @Injectable()
-// export class ProductService {
-//     constructor(private productRepository: ProductRepository) {}
+@Injectable()
+export class ProductService {
 
-//     async createProduct(createProductDto: CreateProductDto, session: ClientSession) {
-//         return await this.productRepository.createProduct(createProductDto, session);
-//     }
+  constructor(
+    private dataServices: IDataServices,
+  ) {}
 
-//     async getProductById(productId: MongooseSchema.Types.ObjectId) {
-//         return await this.productRepository.getProductById(productId);
-//     }
+  create(createProductDto: CreateProductDto) {
+    return 'This action adds a new product';
+  }
 
-//     async getProducts(getQueryDto: GetQueryDto) {
-//         return await this.productRepository.getProducts(getQueryDto);
-//     }
+  findAll() : Promise<Product[]> {
+    return this.dataServices.products.getAll({});
+  }
 
-//     async updateProduct(updateProductDto: UpdateProductDto, session: ClientSession) {
-//         return await this.productRepository.updateProduct(updateProductDto, session);
-//     }
-// }
+
+  findOne(store:string,id: string) {
+    console.log({title:id,storeId:store});
+    
+    return this.dataServices.products.getOne({title:id,storeId:store});
+  }
+
+  update(id: number, updateProductDto: UpdateProductDto) {
+    return `This action updates a #${id} product`;
+  }
+
+  remove(id: number) {
+    return `This action removes a #${id} product`;
+  }
+}

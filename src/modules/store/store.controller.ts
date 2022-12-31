@@ -21,7 +21,7 @@ export class StoreController {
     @Get('/getMenuItems')
     async getMenuItems(@Headers() headers ,@Res() res: Response) {
         const stores: any = await this.storeServices.getStoreByName(headers['x-store-id']);   
-        console.log(stores.menuItems);
+        console.log(stores);
                 
         return res.status(HttpStatus.OK).send(stores.menuItems);
     } 
@@ -37,7 +37,7 @@ export class StoreController {
     @Get('/website')
     async website(@Headers() headers , @Res() res: Response) {
         const stores: any = await this.storeServices.getStoreByName(headers['x-store-id']);
-        //console.log(stores);
+        console.log(stores);
   
       return res.status(HttpStatus.OK).send(stores);
     } 

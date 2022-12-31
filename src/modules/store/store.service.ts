@@ -10,7 +10,9 @@ export class StoreService {
   ) {}
 
   getAllStores(): Promise<Store[]> {
-    return this.dataServices.stores.getAll();
+
+   
+    return this.dataServices.stores.getAll({});
   }
   getStoreByName(name:string): Promise<Store> {
     return this.dataServices.stores.getByName(name);

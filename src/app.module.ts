@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
@@ -12,10 +12,12 @@ import { DataServicesModule } from './core/DataServicesModule';
 // import { ProductModule } from './modules/product/product.module';
 // import { SaleModule } from './modules/sale/sale.module';
 import { UserModule } from './modules/user/user.module';
-import { StoreController } from './Services/store/store.controller';
-import { StoreModule } from './Services/store/store.module';
+import { StoreController } from './modules/store/store.controller';
+import { StoreModule } from './modules/store/store.module';
 //import { ProductController } from './modules/product/product.controller';
-import { ProductModule } from './Services/product/product.module';
+import { ProductModule } from './modules/product/product.module';
+import { StoreService } from './modules/store/store.service';
+import { UserMiddleware } from './middlewares/user.middleware';
 
 @Module({
     imports: [
@@ -28,14 +30,23 @@ import { ProductModule } from './Services/product/product.module';
             inject: [ConfigService],
             useFactory: async (configService: ConfigService) => configService.getMongoConfig(),
         }),
+        DataServicesModule,
         // ClientModule,
         // ProductModule,
         // SaleModule,
-        // UserModule,
+        UserModule,
         DataServicesModule,
-       StoreModule,ProductModule
+       StoreModule,
+       ProductModule
     ],
     controllers: [AppController],
-    providers: [AppService],
+    providers: [AppService,StoreService],
+    exports:[StoreService]
 })
-export class AppModule {}
+export class AppModule {
+    configure(consumer: MiddlewareConsumer) {
+        consumer
+          .apply(UserMiddleware)
+          .forRoutes('products','users');
+      }
+}

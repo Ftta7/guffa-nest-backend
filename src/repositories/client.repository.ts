@@ -4,7 +4,7 @@ import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
 import { GetQueryDto } from '../dto/getQueryDto';
 import { ResponseDto } from '../dto/response.dto';
 import { Client } from '../entities/client.entity';
-import { CreateClientDto } from '../modules/client/dto/createClient.dto';
+import { CreateClientDto } from '../moduless/client/dto/createClient.dto';
 
 export class ClientRepository {
     constructor(

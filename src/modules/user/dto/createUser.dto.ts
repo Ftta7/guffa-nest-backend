@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsDate, isDate, IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateUserDto {
     @IsString()
@@ -12,4 +12,11 @@ export class CreateUserDto {
     @IsString()
     @IsNotEmpty()
     role: any;
+
+    @IsDate()
+    @IsNotEmpty()
+    createdAt:Date;
+
+    @IsNotEmpty()
+    gTokens:any[]
 }

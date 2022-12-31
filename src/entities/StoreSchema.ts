@@ -1,6 +1,7 @@
 import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Mixed, Schema as MongooseSchema } from 'mongoose';
 
+export type StoreDocument = Store & Document;
 
 @Schema()
 export class Store extends Document {

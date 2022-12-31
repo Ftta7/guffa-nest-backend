@@ -1,3 +1,4 @@
+import { table } from 'console';
 import { Model } from 'mongoose';
 import { IGenericRepository } from './IGenericRepository';
 
@@ -10,8 +11,15 @@ export class GenericRepository<T> implements IGenericRepository<T> {
     this._populateOnFind = populateOnFind;
   }
 
-  getAll(): Promise<T[]> {
-    return this._repository.find().populate(this._populateOnFind).exec();
+  getAll(filter:any={}): Promise<T[]> {
+    return this._repository.find(filter).populate(this._populateOnFind).exec();
+  }
+  getOne(filter:any={}): Promise<T> {
+    return this._repository.findOne(filter).exec();
+  }
+
+  filter(filter:any): Promise<T[]> {
+    return this._repository.find().where('title').equals('Pottage meat').exec();
   }
 
   get(id: any): Promise<T> {
@@ -28,8 +36,8 @@ export class GenericRepository<T> implements IGenericRepository<T> {
     return this._repository.findOne().where('storeUniqName').equals(name).exec();
   }
 
-  getFirstByAttr(attrbute:string,value: string): Promise<T> {    
-    return this._repository.findOne().where(attrbute).equals(value).exec();
+  getFirstByAttr(attrbute:string,store: string,id:string): Promise<T> {    
+    return this._repository.findOne().where( { title:id}).exec();
   }
 
 

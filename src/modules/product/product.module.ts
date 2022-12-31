@@ -1,17 +1,13 @@
-// import { Module } from '@nestjs/common';
-// import { MongooseModule } from '@nestjs/mongoose';
-// import { Product, ProductSchema } from '../entities/ProductSchema';
+import { Module } from '@nestjs/common';
+import { ProductService } from './product.service';
+import { ProductController } from './product.controller';
+import { DataServicesModule } from '../../core/DataServicesModule';
+import { StoreModule } from '../store/store.module';
 
-// import { ProductRepository } from '../../repositories/product.repository';
-// import { ClientModule } from '../client/client.module';
-// import { UserModule } from '../user/user.module';
-// import { ProductController } from './product.controller';
-// import { ProductService } from './product.service';
-
-// @Module({
-//     imports: [UserModule, ClientModule, MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }])],
-//     controllers: [ProductController],
-//     providers: [ProductService, ProductRepository],
-//     exports: [ProductService, ProductRepository],
-// })
-// export class ProductModule {}
+@Module({
+  imports: [DataServicesModule,StoreModule],
+  controllers: [ProductController],
+  providers: [ProductService],
+  exports: [ProductService],
+})
+export class ProductModule {}

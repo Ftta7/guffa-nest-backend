@@ -4,7 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Client, ClientSchema } from '../../entities/client.entity';
 import { User, UserSchema } from '../../entities/user.entity';
 import { ClientRepository } from '../../repositories/client.repository';
-import { UserModule } from '../user/user.module';
+import { UserModule } from '../../modules/user/user.module';
 import { ClientController } from './client.controller';
 import { ClientService } from './client.service';
 

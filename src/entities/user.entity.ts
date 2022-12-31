@@ -1,13 +1,34 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, raw, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { type } from 'os';
+
+export type TokenDocument = Token & Document;
+
+@Schema() 
+class Token {
+  @Prop() 
+  token: string;
+
+  @Prop()
+  type: string;
+}
+
+
+
+export type UserDocument = User & Document;
+
 
 @Schema()
 export class User extends Document {
-    @Prop({ required: true, unique: true })
+    @Prop({  unique: true })
     name: string;
 
-    @Prop({ required: true, unique: true })
+    @Prop({  unique: true })
     email: string;
+
+
+    @Prop()
+    tokens:Array<Token>;
 
     @Prop({ required: true, enum: ['ADMIN', 'USER'] })
     role: string;
@@ -15,5 +36,8 @@ export class User extends Document {
     @Prop({ default: Date.now })
     createdAt: Date;
 }
+
+
+
 
 export const UserSchema = SchemaFactory.createForClass(User);

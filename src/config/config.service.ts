@@ -24,7 +24,9 @@ export class ConfigService {
         console.log('mongodb://' + this.get('MONGO_USER') + ':' + this.get('MONGO_PASSWORD') + '@' + this.get('MONGO_HOST') + '/' + this.get('MONGO_DATABASE'));
         
         return {
-            uri: 'mongodb://' + this.get('MONGO_USER') + ':' + this.get('MONGO_PASSWORD') + '@' + this.get('MONGO_HOST') + '/' + this.get('MONGO_DATABASE'),
+            //uri: 'mongodb://' + this.get('MONGO_USER') + ':' + this.get('MONGO_PASSWORD') + '@' + this.get('MONGO_HOST') + '/' + this.get('MONGO_DATABASE'),
+            uri: 'mongodb://admin:1234@localhost:27017/?authMechanism=DEFAULT&authSource=guffa',
+
             useNewUrlParser: true,
             useUnifiedTopology: true,
         };

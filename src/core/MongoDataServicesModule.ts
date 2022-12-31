@@ -8,11 +8,12 @@ import { Store } from '../entities/entities';
 import { IDataServices } from './IDataServices';
 import { MongoDataServices } from './MongoDataServices';
 import { Product, ProductSchema } from '../entities/ProductSchema';
+import { User, UserSchema } from 'src/entities/user.entity';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: Store.name, schema: StoreSchema },  { name: Product.name, schema: ProductSchema }
+      { name: Store.name, schema: StoreSchema },  { name: Product.name, schema: ProductSchema },{ name: User.name, schema: UserSchema }
     ]),
     //MongooseModule.forRoot(DATA_BASE_CONFIGURATION.mongoConnectionString),
     //ConfigModule,

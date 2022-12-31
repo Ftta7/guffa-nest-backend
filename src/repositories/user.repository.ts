@@ -1,27 +1,31 @@
 import { ConflictException, InternalServerErrorException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { ClientSession, Model, Schema as MongooseSchema } from 'mongoose';
+import { IGenericRepository } from 'src/core/IGenericRepository';
 import { User } from '../entities/user.entity';
 import { CreateUserDto } from '../modules/user/dto/createUser.dto';
 
 export class UserRepository {
-    constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {}
+    //constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {}
+    constructor(@InjectModel(User.name) private readonly userModel: IGenericRepository<User>) {}
 
-    async createUser(createUserDto: CreateUserDto, session: ClientSession) {
+    async createUser(createUserDto: CreateUserDto) {
         let user = await this.getUserByEmail(createUserDto.email);
 
         if (user) {
             throw new ConflictException('User already exists');
         }
 
-        user = new this.userModel({
-            name: createUserDto.name,
-            email: createUserDto.email,
-            role: createUserDto.role,
-        });
 
+       //  this.userModel.create(new User);
+        // = await this.userModel.create(createUserDto);
+        // user = new User({
+        //     name: createUserDto.name,
+        //     email: createUserDto.email,
+        //     role: createUserDto.role,
+        // });
+        
         try {
-            user = await user.save({ session });
+           // user = await user.save({ session });
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
@@ -33,10 +37,45 @@ export class UserRepository {
         return user;
     }
 
-    async getUserById(id: MongooseSchema.Types.ObjectId) {
+    async getUserById(id) {
         let user;
         try {
-            user = await this.userModel.findById({ _id: id });
+            user = await this.userModel. get(id);
+        } catch (error) {
+            throw new InternalServerErrorException(error);
+        }
+
+        if (!user) {
+            throw new NotFoundException('User not found');
+        }
+
+        return user;
+    }
+
+
+    async getByGToken(gToken) {
+        let user;
+        console.log("09876543");
+        
+        try {
+            user = await this.userModel.getOne({});
+         console.log("-09876543234567890",user);
+            
+        } catch (error) {
+            throw new InternalServerErrorException(error);
+        }
+
+        if (!user) {
+            throw new NotFoundException('User not found');
+        }
+
+        return user;
+    }
+
+    async getAll() {
+        let user;
+        try {
+            user = await this.userModel.getAll({});
         } catch (error) {
             throw new InternalServerErrorException(error);
         }
@@ -51,8 +90,10 @@ export class UserRepository {
     async getUserByEmail(email: string) {
         let user;
         try {
-            user = await this.userModel.findOne({ email }, 'name email img role').exec();
+            user = await this.userModel.getOne({ email });
         } catch (error) {
+            console.log(error);
+            
             throw new InternalServerErrorException(error);
         }
 
